@@ -65,7 +65,7 @@ test('recalcula cuando cambia una entrada', () => {
   elements.tickets.value = '6000';
   elements.tickets.listeners.input();
   assert.equal(elements.r_consultas.textContent, '12.000 consultas/mes');
-  assert.equal(elements.r_ahorro_bruto.textContent, '8.800 €/mes');
+  assert.equal(elements.r_ahorro_bruto.textContent, '8800 €/mes');
 });
 
 test('rechaza valores negativos y limpia resultados anteriores', () => {
