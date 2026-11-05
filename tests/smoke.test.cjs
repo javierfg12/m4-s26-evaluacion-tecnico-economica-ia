@@ -31,6 +31,9 @@ function loadCalculator() {
     'btn-calcular', 'r_consultas', 'r_tokens_entrada', 'r_tokens_salida',
     'r_ahorro_ticket', 'r_minutos', 'r_horas', 'r_ahorro_bruto',
   ].forEach(id => { elements[id] = makeElement(); });
+  elements['btn-calcular'].parentNode = {
+    insertBefore(element) { elements[element.id] = element; },
+  };
 
   const document = {
     getElementById(id) { return elements[id] || null; },
