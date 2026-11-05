@@ -28,15 +28,18 @@ function limpiarResultados() {
 }
 
 function calcular() {
-  const fields = {
-    tickets: Number(document.getElementById('tickets').value),
-    consultas_ticket: Number(document.getElementById('consultas_ticket').value),
-    tokens_entrada: Number(document.getElementById('tokens_entrada').value),
-    tokens_salida: Number(document.getElementById('tokens_salida').value),
-    tiempo_actual: Number(document.getElementById('tiempo_actual').value),
-    tiempo_ia: Number(document.getElementById('tiempo_ia').value),
-    coste_hora: Number(document.getElementById('coste_hora').value)
+  const rawFields = {
+    tickets: document.getElementById('tickets').value,
+    consultas_ticket: document.getElementById('consultas_ticket').value,
+    tokens_entrada: document.getElementById('tokens_entrada').value,
+    tokens_salida: document.getElementById('tokens_salida').value,
+    tiempo_actual: document.getElementById('tiempo_actual').value,
+    tiempo_ia: document.getElementById('tiempo_ia').value,
+    coste_hora: document.getElementById('coste_hora').value
   };
+  const fields = Object.fromEntries(
+    Object.entries(rawFields).map(([key, value]) => [key, value.trim() === '' ? NaN : Number(value)])
+  );
 
   const labels = {
     tickets: 'Tickets mensuales',
