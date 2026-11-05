@@ -34,7 +34,11 @@ function loadCalculator() {
 
   const document = {
     getElementById(id) { return elements[id] || null; },
-    createElement() { return makeElement(); },
+    createElement() {
+      const element = makeElement();
+      element.parentNode = { insertBefore(node) { elements[node.id] = node; } };
+      return element;
+    },
   };
   const window = {
     listeners: {},
