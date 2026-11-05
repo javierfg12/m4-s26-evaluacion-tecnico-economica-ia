@@ -1,30 +1,32 @@
-# M4-S26 · Diagnóstico Técnico-Económico de Integración IA
+# M4-S26 — Evaluación técnico-económica de integración de IA
 
-Aplicación web estática para analizar la integración de IA generativa en un sistema de atención al cliente B2B.
+Aplicación web estática para analizar una posible integración de IA generativa en atención al cliente B2B.
 
-## Objetivo
-
-Permite introducir los datos del caso, calcular el volumen de uso y el ahorro bruto estimado, comparar las dos alternativas de integración (API externa vs. cloud gestionado) y registrar la decisión final con su justificación.
+## Funcionalidades
+- Estimación de consultas y tokens mensuales.
+- Cálculo del ahorro humano bruto a partir de la reducción estimada de tiempo por ticket.
+- Identificación de desafíos técnicos, económicos, organizativos y de protección de datos.
+- Comparativa cualitativa entre API externa y cloud gestionado.
+- Registro de riesgos, supuestos, incidencias y dependencias (RAID).
 
 ## Uso
+Abre `index.html` en un navegador moderno o publícalo mediante GitHub Pages. Los resultados se actualizan al modificar los datos o pulsar el botón de cálculo.
 
-Abre `index.html` en el navegador o accede a la URL de GitHub Pages. Modifica los datos del caso en la sección 01 y pulsa **Calcular resultados** para actualizar los valores.
+## Validaciones
+- Rechaza valores negativos o no numéricos.
+- Exige valores enteros para tickets, consultas y tokens.
+- Impide estimar ahorro si el tiempo esperado con IA supera el tiempo actual.
+
+## Interpretación económica
+El resultado es **ahorro humano bruto**, no ahorro neto. No resta el coste de tokens, licencias, configuración, mantenimiento, supervisión ni formación. La matriz API externa/cloud gestionado es una comparación cualitativa predefinida, no una cotización ni una medición automática de proveedores.
 
 ## Archivos
-
 | Archivo | Función |
 |---|---|
-| index.html | Estructura y contenido de la aplicación |
-| style.css | Estilos visuales |
-| script.js | Lógica de cálculo |
-| README.md | Esta documentación |
+| `index.html` | Estructura y contenido |
+| `style.css` | Estilos visuales |
+| `script.js` | Validación y cálculos |
+| `README.md` | Documentación |
 
-## Limitaciones
-
-- Aplicación estática, sin backend ni base de datos.
-- No contiene datos personales reales.
-- No incluye claves API ni credenciales.
-
-## Actividad
-
-M4-S26 · Diseño de Sistemas de Información
+## Privacidad
+No introduzcas datos personales reales, información confidencial ni claves API.
